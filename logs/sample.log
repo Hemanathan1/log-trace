@@ -1,0 +1,57 @@
+# Sample Network/System Log File
+# Format: TIMESTAMP LEVEL SOURCE MESSAGE
+
+2025-04-10 08:01:12 INFO 192.168.1.10 User admin logged in successfully
+2025-04-10 08:01:45 INFO 192.168.1.20 User john logged in successfully
+2025-04-10 08:03:11 WARNING 192.168.1.10 Disk usage at 80%
+2025-04-10 08:05:00 INFO 192.168.1.30 User mary logged in successfully
+2025-04-10 08:10:22 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:10:25 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:10:28 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:10:30 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:10:32 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:10:35 FAILED 192.168.1.99 Failed login attempt for user admin
+2025-04-10 08:15:00 INFO 192.168.1.10 File downloaded successfully
+2025-04-10 08:20:11 ERROR 192.168.1.50 Connection timeout on port 443
+2025-04-10 08:21:00 ERROR 192.168.1.50 Connection timeout on port 443
+2025-04-10 08:21:30 ERROR 192.168.1.50 Connection timeout on port 443
+2025-04-10 08:22:00 ERROR 192.168.1.50 Connection timeout on port 443
+2025-04-10 08:22:30 ERROR 192.168.1.50 Connection timeout on port 443
+2025-04-10 08:30:00 INFO 192.168.1.20 User john logged out
+2025-04-10 08:35:12 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:13 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:14 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:15 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:16 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:17 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:18 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:19 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:20 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:35:21 FAILED 203.0.113.5 Failed login attempt for user root
+2025-04-10 08:40:00 INFO 192.168.1.10 System backup completed
+2025-04-10 08:45:00 SCAN 203.0.113.5 Port scan detected on port 22
+2025-04-10 08:45:01 SCAN 203.0.113.5 Port scan detected on port 23
+2025-04-10 08:45:02 SCAN 203.0.113.5 Port scan detected on port 80
+2025-04-10 08:45:03 SCAN 203.0.113.5 Port scan detected on port 443
+2025-04-10 08:45:04 SCAN 203.0.113.5 Port scan detected on port 3306
+2025-04-10 08:45:05 SCAN 203.0.113.5 Port scan detected on port 6379
+2025-04-10 08:45:06 SCAN 203.0.113.5 Port scan detected on port 8080
+2025-04-10 08:50:00 ERROR 192.168.1.30 Database connection failed
+2025-04-10 08:50:05 ERROR 192.168.1.30 Database connection failed
+2025-04-10 08:50:10 ERROR 192.168.1.30 Database connection failed
+2025-04-10 09:00:00 INFO 192.168.1.10 Service restarted successfully
+2025-04-10 09:05:00 WARNING 192.168.1.40 High CPU usage: 92%
+2025-04-10 09:10:00 FAILED 198.51.100.7 Failed login attempt for user admin
+2025-04-10 09:10:01 FAILED 198.51.100.7 Failed login attempt for user admin
+2025-04-10 09:10:02 FAILED 198.51.100.7 Failed login attempt for user admin
+2025-04-10 09:10:03 FAILED 198.51.100.7 Failed login attempt for user admin
+2025-04-10 09:15:00 INFO 192.168.1.20 User john logged in successfully
+2025-04-10 09:20:00 ERROR 192.168.1.10 SSL certificate expiring in 3 days
+2025-04-10 09:25:00 CRITICAL 192.168.1.50 System memory critically low: 98% used
+2025-04-10 09:30:00 INFO 192.168.1.10 Scheduled maintenance started
+2025-04-10 09:35:00 WARNING 203.0.113.5 Unusual outbound traffic volume detected
+2025-04-10 09:40:00 CRITICAL 203.0.113.5 Possible data exfiltration detected
+2025-04-10 09:45:00 INFO 192.168.1.10 Firewall rules updated
+2025-04-10 09:50:00 ERROR 192.168.1.99 Unauthorized access attempt blocked
+2025-04-10 09:55:00 INFO 192.168.1.10 Scheduled maintenance completed
+2025-04-10 10:00:00 INFO 192.168.1.10 All systems operational
