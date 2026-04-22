@@ -1,0 +1,96 @@
+{
+  "alerts": [
+    {
+      "type": "Brute Force Attack",
+      "severity": "CRITICAL",
+      "source_ip": "203.0.113.5",
+      "detail": "10 failed login attempts from 203.0.113.5",
+      "count": 10
+    },
+    {
+      "type": "Port Scan Detected",
+      "severity": "CRITICAL",
+      "source_ip": "203.0.113.5",
+      "detail": "7 ports scanned from 203.0.113.5",
+      "count": 7
+    },
+    {
+      "type": "Critical System Event",
+      "severity": "CRITICAL",
+      "source_ip": "192.168.1.50",
+      "detail": "System memory critically low: 98% used",
+      "count": 1
+    },
+    {
+      "type": "Critical System Event",
+      "severity": "CRITICAL",
+      "source_ip": "203.0.113.5",
+      "detail": "Possible data exfiltration detected",
+      "count": 1
+    },
+    {
+      "type": "Suspicious Activity",
+      "severity": "CRITICAL",
+      "source_ip": "203.0.113.5",
+      "detail": "Keyword 'exfiltration' detected: Possible data exfiltration detected",
+      "count": 1
+    },
+    {
+      "type": "Suspicious Activity",
+      "severity": "CRITICAL",
+      "source_ip": "192.168.1.99",
+      "detail": "Keyword 'unauthorized' detected: Unauthorized access attempt blocked",
+      "count": 1
+    },
+    {
+      "type": "Brute Force Attack",
+      "severity": "WARNING",
+      "source_ip": "192.168.1.99",
+      "detail": "6 failed login attempts from 192.168.1.99",
+      "count": 6
+    },
+    {
+      "type": "Error Spike",
+      "severity": "WARNING",
+      "source_ip": "192.168.1.50",
+      "detail": "5 errors from 192.168.1.50",
+      "count": 5
+    },
+    {
+      "type": "Error Spike",
+      "severity": "WARNING",
+      "source_ip": "192.168.1.30",
+      "detail": "3 errors from 192.168.1.30",
+      "count": 3
+    }
+  ],
+  "total_entries": 54,
+  "total_failed_logins": 20,
+  "total_errors": 10,
+  "total_warnings": 3,
+  "critical_count": 6,
+  "warning_count": 3,
+  "top_ips": {
+    "203.0.113.5": 19,
+    "192.168.1.10": 10,
+    "192.168.1.99": 7,
+    "192.168.1.50": 6,
+    "192.168.1.30": 4,
+    "198.51.100.7": 4,
+    "192.168.1.20": 3,
+    "192.168.1.40": 1
+  },
+  "level_counts": {
+    "INFO": 12,
+    "WARNING": 3,
+    "FAILED": 20,
+    "ERROR": 10,
+    "SCAN": 7,
+    "CRITICAL": 2
+  },
+  "failed_logins_by_ip": {
+    "192.168.1.99": 6,
+    "203.0.113.5": 10,
+    "198.51.100.7": 4
+  }
+}

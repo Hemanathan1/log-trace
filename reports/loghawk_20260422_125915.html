@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LogHawk Security Report</title>
+<style>
+  :root {
+    --bg: #0a0f1a; --card: #111827; --border: #1f2937;
+    --text: #e2e8f0; --muted: #6b7280; --accent: #3b82f6;
+    --red: #ef4444; --yellow: #f59e0b; --green: #10b981;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); padding: 2rem; }
+  h1 { font-size: 1.9rem; color: var(--accent); margin-bottom: 0.2rem; }
+  .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; text-align: center; }
+  .stat .num { font-size: 2rem; font-weight: 700; }
+  .stat .label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  .red { color: var(--red); } .yellow { color: var(--yellow); } .green { color: var(--green); } .blue { color: var(--accent); }
+  .section { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 1.5rem; overflow: hidden; }
+  .section-title { padding: 0.75rem 1.25rem; background: #0d1525; font-weight: 700; font-size: 0.85rem;
+                    text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th { background: #0d1525; color: var(--muted); padding: 0.5rem 1rem; text-align: left;
+        font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  td { padding: 0.55rem 1rem; border-top: 1px solid var(--border); }
+  tr:hover td { background: rgba(59,130,246,0.05); }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
+  .CRITICAL { background: rgba(239,68,68,0.15); color: var(--red); }
+  .WARNING  { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .INFO     { background: rgba(16,185,129,0.15); color: var(--green); }
+  footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<h1>🦅 LogHawk — Security Report</h1>
+<div class="meta">Generated: 2026-04-22 12:59:15 &nbsp;|&nbsp; 54 log entries analysed</div>
+
+<div class="grid">
+  <div class="stat"><div class="num red">6</div><div class="label">Critical Alerts</div></div>
+  <div class="stat"><div class="num yellow">3</div><div class="label">Warnings</div></div>
+  <div class="stat"><div class="num red">20</div><div class="label">Failed Logins</div></div>
+  <div class="stat"><div class="num yellow">10</div><div class="label">Errors</div></div>
+  <div class="stat"><div class="num blue">54</div><div class="label">Total Entries</div></div>
+</div>
+
+<div class="section">
+  <div class="section-title">🚨 Threat Alerts</div>
+  <table>
+    <thead><tr><th>Severity</th><th>Threat Type</th><th>Source IP</th><th>Detail</th></tr></thead>
+    <tbody><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Brute Force Attack</td><td>203.0.113.5</td><td>10 failed login attempts from 203.0.113.5</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Port Scan Detected</td><td>203.0.113.5</td><td>7 ports scanned from 203.0.113.5</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Critical System Event</td><td>192.168.1.50</td><td>System memory critically low: 98% used</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Critical System Event</td><td>203.0.113.5</td><td>Possible data exfiltration detected</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Suspicious Activity</td><td>203.0.113.5</td><td>Keyword 'exfiltration' detected: Possible data exfiltration detected</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>Suspicious Activity</td><td>192.168.1.99</td><td>Keyword 'unauthorized' detected: Unauthorized access attempt blocked</td></tr><tr><td><span class='badge WARNING'>WARNING</span></td><td>Brute Force Attack</td><td>192.168.1.99</td><td>6 failed login attempts from 192.168.1.99</td></tr><tr><td><span class='badge WARNING'>WARNING</span></td><td>Error Spike</td><td>192.168.1.50</td><td>5 errors from 192.168.1.50</td></tr><tr><td><span class='badge WARNING'>WARNING</span></td><td>Error Spike</td><td>192.168.1.30</td><td>3 errors from 192.168.1.30</td></tr></tbody>
+  </table>
+</div>
+
+<div class="grid" style="grid-template-columns: 1fr 1fr;">
+  <div class="section">
+    <div class="section-title">📊 Log Level Breakdown</div>
+    <table>
+      <thead><tr><th>Level</th><th>Count</th></tr></thead>
+      <tbody><tr><td><span class='badge FAILED'>FAILED</span></td><td>20</td></tr><tr><td><span class='badge INFO'>INFO</span></td><td>12</td></tr><tr><td><span class='badge ERROR'>ERROR</span></td><td>10</td></tr><tr><td><span class='badge SCAN'>SCAN</span></td><td>7</td></tr><tr><td><span class='badge WARNING'>WARNING</span></td><td>3</td></tr><tr><td><span class='badge CRITICAL'>CRITICAL</span></td><td>2</td></tr></tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="section-title">🌐 Top Source IPs</div>
+    <table>
+      <thead><tr><th>IP Address</th><th>Entries</th></tr></thead>
+      <tbody><tr><td>203.0.113.5</td><td>19</td></tr><tr><td>192.168.1.10</td><td>10</td></tr><tr><td>192.168.1.99</td><td>7</td></tr><tr><td>192.168.1.50</td><td>6</td></tr><tr><td>192.168.1.30</td><td>4</td></tr><tr><td>198.51.100.7</td><td>4</td></tr><tr><td>192.168.1.20</td><td>3</td></tr><tr><td>192.168.1.40</td><td>1</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📋 Full Log Entries</div>
+  <table>
+    <thead><tr><th>#</th><th>Timestamp</th><th>Level</th><th>Source IP</th><th>Message</th></tr></thead>
+    <tbody><tr><td>1</td><td>2025-04-10 08:01:12</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>User admin logged in successfully</td></tr><tr><td>2</td><td>2025-04-10 08:01:45</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.20</td><td>User john logged in successfully</td></tr><tr><td>3</td><td>2025-04-10 08:03:11</td><td><span class='badge WARNING'>WARNING</span></td><td>192.168.1.10</td><td>Disk usage at 80%</td></tr><tr><td>4</td><td>2025-04-10 08:05:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.30</td><td>User mary logged in successfully</td></tr><tr><td>5</td><td>2025-04-10 08:10:22</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>6</td><td>2025-04-10 08:10:25</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>7</td><td>2025-04-10 08:10:28</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>8</td><td>2025-04-10 08:10:30</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>9</td><td>2025-04-10 08:10:32</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>10</td><td>2025-04-10 08:10:35</td><td><span class='badge CRITICAL'>FAILED</span></td><td>192.168.1.99</td><td>Failed login attempt for user admin</td></tr><tr><td>11</td><td>2025-04-10 08:15:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>File downloaded successfully</td></tr><tr><td>12</td><td>2025-04-10 08:20:11</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.50</td><td>Connection timeout on port 443</td></tr><tr><td>13</td><td>2025-04-10 08:21:00</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.50</td><td>Connection timeout on port 443</td></tr><tr><td>14</td><td>2025-04-10 08:21:30</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.50</td><td>Connection timeout on port 443</td></tr><tr><td>15</td><td>2025-04-10 08:22:00</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.50</td><td>Connection timeout on port 443</td></tr><tr><td>16</td><td>2025-04-10 08:22:30</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.50</td><td>Connection timeout on port 443</td></tr><tr><td>17</td><td>2025-04-10 08:30:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.20</td><td>User john logged out</td></tr><tr><td>18</td><td>2025-04-10 08:35:12</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>19</td><td>2025-04-10 08:35:13</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>20</td><td>2025-04-10 08:35:14</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>21</td><td>2025-04-10 08:35:15</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>22</td><td>2025-04-10 08:35:16</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>23</td><td>2025-04-10 08:35:17</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>24</td><td>2025-04-10 08:35:18</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>25</td><td>2025-04-10 08:35:19</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>26</td><td>2025-04-10 08:35:20</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>27</td><td>2025-04-10 08:35:21</td><td><span class='badge CRITICAL'>FAILED</span></td><td>203.0.113.5</td><td>Failed login attempt for user root</td></tr><tr><td>28</td><td>2025-04-10 08:40:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>System backup completed</td></tr><tr><td>29</td><td>2025-04-10 08:45:00</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 22</td></tr><tr><td>30</td><td>2025-04-10 08:45:01</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 23</td></tr><tr><td>31</td><td>2025-04-10 08:45:02</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 80</td></tr><tr><td>32</td><td>2025-04-10 08:45:03</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 443</td></tr><tr><td>33</td><td>2025-04-10 08:45:04</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 3306</td></tr><tr><td>34</td><td>2025-04-10 08:45:05</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 6379</td></tr><tr><td>35</td><td>2025-04-10 08:45:06</td><td><span class='badge CRITICAL'>SCAN</span></td><td>203.0.113.5</td><td>Port scan detected on port 8080</td></tr><tr><td>36</td><td>2025-04-10 08:50:00</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.30</td><td>Database connection failed</td></tr><tr><td>37</td><td>2025-04-10 08:50:05</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.30</td><td>Database connection failed</td></tr><tr><td>38</td><td>2025-04-10 08:50:10</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.30</td><td>Database connection failed</td></tr><tr><td>39</td><td>2025-04-10 09:00:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>Service restarted successfully</td></tr><tr><td>40</td><td>2025-04-10 09:05:00</td><td><span class='badge WARNING'>WARNING</span></td><td>192.168.1.40</td><td>High CPU usage: 92%</td></tr><tr><td>41</td><td>2025-04-10 09:10:00</td><td><span class='badge CRITICAL'>FAILED</span></td><td>198.51.100.7</td><td>Failed login attempt for user admin</td></tr><tr><td>42</td><td>2025-04-10 09:10:01</td><td><span class='badge CRITICAL'>FAILED</span></td><td>198.51.100.7</td><td>Failed login attempt for user admin</td></tr><tr><td>43</td><td>2025-04-10 09:10:02</td><td><span class='badge CRITICAL'>FAILED</span></td><td>198.51.100.7</td><td>Failed login attempt for user admin</td></tr><tr><td>44</td><td>2025-04-10 09:10:03</td><td><span class='badge CRITICAL'>FAILED</span></td><td>198.51.100.7</td><td>Failed login attempt for user admin</td></tr><tr><td>45</td><td>2025-04-10 09:15:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.20</td><td>User john logged in successfully</td></tr><tr><td>46</td><td>2025-04-10 09:20:00</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.10</td><td>SSL certificate expiring in 3 days</td></tr><tr><td>47</td><td>2025-04-10 09:25:00</td><td><span class='badge CRITICAL'>CRITICAL</span></td><td>192.168.1.50</td><td>System memory critically low: 98% used</td></tr><tr><td>48</td><td>2025-04-10 09:30:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>Scheduled maintenance started</td></tr><tr><td>49</td><td>2025-04-10 09:35:00</td><td><span class='badge WARNING'>WARNING</span></td><td>203.0.113.5</td><td>Unusual outbound traffic volume detected</td></tr><tr><td>50</td><td>2025-04-10 09:40:00</td><td><span class='badge CRITICAL'>CRITICAL</span></td><td>203.0.113.5</td><td>Possible data exfiltration detected</td></tr><tr><td>51</td><td>2025-04-10 09:45:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>Firewall rules updated</td></tr><tr><td>52</td><td>2025-04-10 09:50:00</td><td><span class='badge WARNING'>ERROR</span></td><td>192.168.1.99</td><td>Unauthorized access attempt blocked</td></tr><tr><td>53</td><td>2025-04-10 09:55:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>Scheduled maintenance completed</td></tr><tr><td>54</td><td>2025-04-10 10:00:00</td><td><span class='badge INFO'>INFO</span></td><td>192.168.1.10</td><td>All systems operational</td></tr></tbody>
+  </table>
+</div>
+
+<footer>Generated by LogHawk &nbsp;|&nbsp; 2026-04-22 12:59:15</footer>
+</body>
+</html>
