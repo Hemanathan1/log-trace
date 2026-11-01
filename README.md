@@ -2,6 +2,7 @@
 
 A Python-based CLI tool that reads network and system log files, detects suspicious patterns, and generates a detailed security report — similar to how enterprise SIEM tools work.
 
+I created this project for relevant to backend, DevOps and security work.
 ---
 
 ## 📸 Demo
